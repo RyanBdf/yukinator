@@ -1,0 +1,40 @@
+{% extends 'base.twig' %}
+{% block title %}Yukinator{% endblock %}
+{% block body %}
+    <div class="col-8">
+        <div class="row d-flex justify-content-center">
+            <div class="col-2 fs-1 text-end">&#128546;</div>
+            <div class="col-9">
+                <div class="speech-bubble d-flex align-items-center">
+                    <p>Oups, j'étais pourtant sûr que c'était {{ app.session.get('game').flats[0] | lower }}.</p>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-12">
+                        {{ form_start(form) }}
+
+                        {{ form_row(form.flat) }}
+
+                        <div class="mb-3">
+                            <label class="fw-bold form-label required" for="answer_question_flat">
+                                {{ form_label(form.question) }} "{{ app.session.get('game').flats[0] }}" ?
+                            </label>
+                            {{ form_widget(form.question) }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form_label(form.answer) }}
+                            {% for choice in form.answer.children %}
+                                <div class="form-check form-check-inline ps-0">
+                                    {{ form_widget(choice) }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        {{ form_rest(form) }}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

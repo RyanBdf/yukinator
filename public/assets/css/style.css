@@ -1,0 +1,52 @@
+html,
+body {
+    height: 100%;
+}
+
+.container {
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.speech-bubble {
+    position: relative;
+    background: #f2f2f2;
+    border-radius: .4em;
+    min-height: 56px;
+}
+
+.speech-bubble p {
+    font-size: 1rem !important;
+    padding: 14px 0 0 18px;
+    font-family: Roboto, serif;
+    color: #5a5a5a;
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 11px solid transparent;
+    border-right-color: #f2f2f2;
+    border-left: 0;
+    margin-top: -11px;
+    margin-left: -11px;
+}
+
+button {
+    opacity: .8;
+    border-radius: 3px!important;
+}
+
+a.btn, p {
+    font-size: 13px !important;
+}
+
+.text-secondary {
+    color: #cecece !important;
+}

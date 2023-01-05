@@ -1,0 +1,36 @@
+{% extends 'base.twig' %}
+{% block title %}Yukinator{% endblock %}
+{% block body %}
+    <div class="col-8">
+        <div class="row d-flex justify-content-center">
+            <div class="col-2 fs-1 text-end">&#129300;</div>
+            <div class="col-9">
+                <div class="speech-bubble d-flex align-items-center">
+                    <p>{{ app.session.get('game').questions[0].label }}</p>
+                </div>
+                <div class="mt-4">
+                    <div class="col-12">
+                        <form method="post" >
+                            <input type="submit" value="Non" name="answer" class="btn btn-danger">
+                            <input type="submit" value="Oui" name="answer" class="btn btn-primary"/>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 mt-4">
+                        <p class="text-secondary">Je
+                            connais {{ app.session.get('game').flats | length }} {{ (app.session.get('game').flats | length > 1) ? 'plats' : 'plat' }}
+                            ,
+                            je vais trouver en
+                            {{ app.session.get('game').questions | length }} {{ app.session.get('game').questions | length > 1 ? 'questions' : 'question' }}
+                            maximum
+                            !</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
