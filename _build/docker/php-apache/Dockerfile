@@ -28,7 +28,7 @@ RUN a2enmod rewrite &&\
     a2ensite docker &&\
     service apache2 restart \
 
-COPY $PWD /var/www/html
+COPY . /var/www/html
 RUN rm -rf _build
 WORKDIR /var/www/html
 
