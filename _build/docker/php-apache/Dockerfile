@@ -2,7 +2,7 @@ FROM php:8.1.2-apache
 
 LABEL traefik.enable="true"
 LABEL traefik.port=80
-LABEL traefik.http.routers.yukinator.rule="Host(`yukinator.localhost`)"
+LABEL traefik.http.routers.yukinator.rule="Host(`yukinator.sytes.net`)"
 LABEL traefik.http.routers.yukinator.entrypoints="websecure"
 LABEL traefik.http.routers.yukinator.tls.certresolver="myresolver"
 
