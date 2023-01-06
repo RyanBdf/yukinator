@@ -38,7 +38,7 @@ body {
     margin-left: -11px;
 }
 
-button {
+button, a.btn, input[type="submit"] {
     opacity: .8;
     border-radius: 3px!important;
 }
