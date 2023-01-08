@@ -20,12 +20,12 @@ class Game {
 	}
 
 	public function start(): void {
-			$this->session->start();
-			$this->session->remove( "game" );
-			$this->session->set( "game", [
-				"flats"     => $this->flatRepository->findAll(),
-				"questions" => $this->questionRepository->findBy([], ['id' => 'ASC']),
-			] );
+		$this->session->start();
+		$this->session->remove( "game" );
+		$this->session->set( "game", [
+			"flats"     => $this->flatRepository->findAll(),
+			"questions" => $this->questionRepository->findBy( [], [ 'id' => 'ASC' ] ),
+		] );
 	}
 
 	public function confirm( bool $answer ): void {
@@ -44,17 +44,14 @@ class Game {
 			unset( $questions[0] );
 
 			$this->session->set( "game", [
-				"flats"     => array_values($flats),
-				"questions" => array_values($questions),
+				"flats"     => array_values( $flats ),
+				"questions" => array_values( $questions ),
 			] );
 		}
 	}
 
 	public function end(): ?Flat {
-		$flat = $this->get( 'flats' )[0];
-		$this->session->remove( "game" );
-
-		return $flat;
+		return $this->get( 'flats' )[0];
 	}
 
 }
